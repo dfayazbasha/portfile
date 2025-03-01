@@ -94,21 +94,22 @@
         /* Image blinking effect when mouse moves on it */
 /* Initially hidden image */
 /* Initially hidden image */
+/* Initially hidden image */
 .hero img {
     opacity: 0;
     transform: scale(0);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Image appears only once when the page loads */
-.hero img.loaded {
+/* Image appears once when page loads */
+.hero img.show {
     opacity: 1;
     transform: scale(1);
 }
 
-/* Move image when hovered or touched */
+/* Move image slightly when hovered or touched */
 .hero img:hover, .hero img:active {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05);
 }
 
 
