@@ -87,6 +87,30 @@
             animation: fadeInScale 1s ease-out;
         }
 
+        /* Image slides up from bottom */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.hero img {
+    animation: slideUp 1s ease-out;
+}
+
+/* Image blinking effect when clicked */
+@keyframes blink {
+    50% { opacity: 0.3; }
+}
+.hero img:active {
+    animation: blink 0.5s infinite alternate;
+}
+
+
     </style>
 </head>
 <body>
