@@ -101,6 +101,21 @@
     transform: translateY(-5px);
     transition: transform 0.3s ease-in-out;
 }
+        /*jjj*/
+        /* Image blinking effect when mouse moves on it */
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
+
+/* Image moves slightly when hovered (like text) */
+.hero img {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.hero img:hover {
+    animation: blink 0.5s infinite alternate;
+    transform: translateY(-5px);
+}
+/*llll*/
 
 
 
