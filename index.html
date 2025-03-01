@@ -103,18 +103,20 @@
     }
 }
 
-/* Move slightly when hovered/touched */
+/* Move continuously while hovered */
 .hero img:hover {
-    transform: translateY(-10px) scale(1.05);
-    transition: transform 0.3s ease-in-out;
+    animation: moveAround 1s infinite alternate ease-in-out;
 }
 
-/* Keep the image visible after hover */
-.hero img {
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+/* Define movement */
+@keyframes moveAround {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
 }
-
-
 
 /*llll*/
 
