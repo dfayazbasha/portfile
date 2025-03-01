@@ -93,14 +93,15 @@
         /*jjj*/
         /* Image blinking effect when mouse moves on it */
 /* Initially hidden image */
+/* Initially hidden image */
 .hero img {
     opacity: 0;
     transform: scale(0);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Image appears once when the page loads */
-.hero img.show {
+/* Image appears only once when the page loads */
+.hero img.loaded {
     opacity: 1;
     transform: scale(1);
 }
@@ -109,6 +110,7 @@
 .hero img:hover, .hero img:active {
     transform: translateY(-5px);
 }
+
 
 /*llll*/
 
