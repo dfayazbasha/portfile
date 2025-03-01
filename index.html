@@ -103,20 +103,21 @@
     }
 }
 
-/* Move continuously while hovered */
+/* Move slightly when hovered */
 .hero img:hover {
-    animation: moveAround 1s infinite alternate ease-in-out;
+    animation: moveAround 0.5s infinite alternate ease-in-out;
 }
 
-/* Define movement */
+/* Define slight movement */
 @keyframes moveAround {
     from {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 }
+
 
 /*llll*/
 
