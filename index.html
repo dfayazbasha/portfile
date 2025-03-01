@@ -95,7 +95,7 @@
     animation: appear 1s ease-out forwards;
 }
 
-/* Image appears only ONCE when the page loads */
+/* Image appears ONCE when the page loads */
 @keyframes appear {
     to {
         opacity: 1;
@@ -103,18 +103,17 @@
     }
 }
 
-/* Move slightly when hovered */
+/* Slightly grow and shrink when hovered */
 .hero img:hover {
-    animation: moveAround 0.05s infinite alternate ease-in-out;
+    animation: scaleUp 0.3s ease-in-out forwards;
 }
 
-/* Define slight movement */
-@keyframes moveAround {
+@keyframes scaleUp {
     from {
-        transform: translateY(0);
+        transform: scale(1);
     }
     to {
-        transform: translateY(-5px);
+        transform: scale(1.1);
     }
 }
 
