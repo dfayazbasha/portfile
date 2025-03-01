@@ -72,6 +72,21 @@
             transform: scale(1.1);
             background: linear-gradient(135deg, rgba(138,43,226,1), rgba(255,140,0,1));
         }
+        /* ***** Added Animation for Image Appearance ***** */
+@keyframes fadeInScale {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.hero img {
+    animation: fadeInScale 1s ease-out;
+}
+
     </style>
 </head>
 <body>
@@ -125,6 +140,13 @@
         <section id="resume" class="resume">
             <h2 class="moving-text">Resume</h2>
             <a href="https://drive.google.com/file/d/1f0OTnte8QI7U7d5xWcVnWW4okErwE_EN/view?usp=drive_link" target="_blank" class="moving-text"><i class="fas fa-file-alt"></i> View Resume</a>
+        </section>
+        
+            <h2 class="moving-text">Certifications</h2>
+        <section class="skills-container">
+            <div class="skill-box moving-text">Data Analytics and Visualization - Accenture</div>
+            <div class="skill-box moving-text">SQL - IBM</div>
+            <div class="skill-box moving-text">DSA - Udemy</div>
         </section>
         
         <section id="contact" class="icons">
