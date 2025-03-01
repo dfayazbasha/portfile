@@ -89,17 +89,13 @@
 
         /* Image slides up from bottom */
 /* Image blinking effect on hover */
-
-        /*jjj*/
-        /* Image blinking effect when mouse moves on it */
-/* Initially hidden image */
 .hero img {
     opacity: 0;
     transform: scale(0);
-    animation: appear 0.5s ease-in-out forwards;
+    animation: appear 1s ease-out forwards;
 }
 
-/* Image appears only once */
+/* Image appears only ONCE when the page loads */
 @keyframes appear {
     to {
         opacity: 1;
@@ -107,10 +103,15 @@
     }
 }
 
-/* Move the image slightly when hovered or touched */
+/* Move slightly when hovered/touched */
 .hero img:hover {
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-10px) scale(1.05);
     transition: transform 0.3s ease-in-out;
+}
+
+/* Keep the image visible after hover */
+.hero img {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 
