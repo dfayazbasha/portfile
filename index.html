@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D. Fayaz Basha - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@500&display=swap');
         
@@ -15,7 +16,9 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            text-align: center;
         }
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -23,13 +26,20 @@
             text-align: center;
             padding: 20px 0;
         }
+
+        header {
+            margin-top: 20px;
+        }
+
         .hero {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
             text-align: left;
+            margin: 40px 0;
         }
+
         .hero img {
             width: 300px;
             height: 300px;
@@ -37,21 +47,46 @@
             box-shadow: 0 0 30px #8e44ad;
             background: radial-gradient(circle, rgba(138,43,226,1) 0%, rgba(75,0,130,1) 100%);
             padding: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: appear 1s ease-out forwards;
         }
+
+        @keyframes appear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero img:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease-in-out;
+        }
+
         .intro {
             max-width: 500px;
             margin-left: 20px;
             font-size: 18px;
             line-height: 1.6;
         }
+
         .moving-text:hover, .icons a:hover {
             transform: translateY(-5px);
             transition: transform 0.3s ease-in-out;
         }
+
         .icons a {
             font-size: 50px;
             margin: 15px;
+            color: white;
+            text-decoration: none;
         }
+
+        .icons a:hover {
+            color: #ff9800;
+        }
+
         .skills-container, .projects-container {
             display: flex;
             flex-wrap: wrap;
@@ -59,93 +94,58 @@
             gap: 30px;
             padding: 20px;
         }
-        .skill-box, .project-box {
+
+        .skill-box {
+            background: linear-gradient(135deg, rgba(138,43,226,0.8), rgba(255,140,0,0.8));
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(255,140,0,0.8);
+            margin: 15px;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(138,43,226,1), rgba(255,140,0,1));
+        }
+
+        /* ✅ Project Card Styles */
+        a.project-box {
+            display: block;
+            text-decoration: none !important;
+            color: white !important;
             background: linear-gradient(135deg, rgba(138,43,226,0.8), rgba(255,140,0,0.8));
             padding: 20px;
             border-radius: 10px;
             width: 300px;
-            transition: 0.3s;
             box-shadow: 0 0 15px rgba(255,140,0,0.8);
             margin: 20px;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
         }
-        .skill-box:hover, .project-box:hover {
+
+        a.project-box:hover {
             transform: scale(1.1);
             background: linear-gradient(135deg, rgba(138,43,226,1), rgba(255,140,0,1));
-        }
-        a.project-box {
-    text-decoration: none;
-    color: white;
-    display: block;
-}
-
-a.project-box:hover {
-    text-decoration: none;
-    color: white;
-}
-
-        /* ***** Added Animation for Image Appearance ***** */
-        @keyframes fadeInScale {
-            from {
-               transform: scale(0);
-               opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        .hero img {
-            animation: fadeInScale 1s ease-out;
+            box-shadow: 0 0 25px rgba(255,140,0,1);
+            color: #fff !important;
         }
 
-        /* Image slides up from bottom */
-/* Image blinking effect on hover */
-.hero img {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: appear 1s ease-out forwards;
-}
-
-/* Image appears ONCE when the page loads */
-@keyframes appear {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Move image slightly UP when hovered/touched */
-.hero img:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease-in-out;
-}
-
-        /*lll*/
-           body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 50px;
-        }
-        .container {
-            position: relative;
-            display: inline-block;
-        }
-        .image {
-            width: 200px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .image:hover {
-            transform: translateY(-10px);
+        a.project-box h3,
+        a.project-box p {
+            margin: 0;
+            color: white !important;
         }
 
- 
+        .resume a {
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 18px;
+        }
 
-
-
-/*llll*/
-
-
-
+        .resume a:hover {
+            color: #ffd54f;
+        }
     </style>
 </head>
 <body>
@@ -156,58 +156,64 @@ a.project-box:hover {
     
     <section class="hero">
         <img src="trial.png" alt="Fayaz Basha">
-
         <div class="intro">
-            <p class="moving-text">Hello, I’m D. Fayaz Basha, a Computer Science Engineering student at Kalasalingam Academy of Research and Education. I have a strong foundation in Java, Data Structures & Algorithms, MYSQL, and problem-solving. I’m a quick learner, a team player, and always eager to explore new technologies. I look forward to the opportunity to contribute my skills to your team.</p>
+            <p class="moving-text">
+                Hello, I’m D. Fayaz Basha, a Computer Science Engineering student at Kalasalingam Academy of Research and Education. 
+                I have a strong foundation in Java, Data Structures & Algorithms, MySQL, and problem-solving. 
+                I’m a quick learner, a team player, and always eager to explore new technologies.
+            </p>
         </div>
     </section>
     
     <div class="container">
         <h2 class="moving-text">Technical Skills</h2>
         <section class="skills-container">
-            <div class="skill-box moving-text">Java </div>
-            <div class="skill-box moving-text">DSA  </div>
-            <div class="skill-box moving-text">Spring Boot </div>
-            <div class="skill-box moving-text">OOP  </div>
-           <div class="skill-box moving-text">SQL </div>
-                  <div class="skill-box moving-text">React js </div>
-            <div class="skill-box moving-text">HTML  </div>
-            <div class="skill-box moving-text">CSS </div>
+            <div class="skill-box moving-text">Java</div>
+            <div class="skill-box moving-text">DSA</div>
+            <div class="skill-box moving-text">Spring Boot</div>
+            <div class="skill-box moving-text">OOP</div>
+            <div class="skill-box moving-text">SQL</div>
+            <div class="skill-box moving-text">React JS</div>
+            <div class="skill-box moving-text">HTML</div>
+            <div class="skill-box moving-text">CSS</div>
         </section>
         
         <h2 class="moving-text">Professional Skills</h2>
         <section class="skills-container">
-            <div class="skill-box moving-text">Problem Solving - </div>
-            <div class="skill-box moving-text">Communication - </div>
-            <div class="skill-box moving-text">Analytical Reasoning - </div>
-            <div class="skill-box moving-text">Team Work - </div>
-       <h2 class="moving-text">Projects</h2>
-<section class="projects-container">
+            <div class="skill-box moving-text">Problem Solving</div>
+            <div class="skill-box moving-text">Communication</div>
+            <div class="skill-box moving-text">Analytical Reasoning</div>
+            <div class="skill-box moving-text">Team Work</div>
+        </section>
+        
+        <h2 class="moving-text">Projects</h2>
+        <section class="projects-container">
 
-    <a href="https://github.com/dfayazbasha/SINSHOESS" target="_blank" class="project-box moving-text">
-        <h3>Full Stack Website on Shoes</h3>
-        <p>Website for all brands of shoes built using Spring Boot and React JS.</p>
-    </a>
+            <a href="https://github.com/dfayazbasha/SINSHOESS" target="_blank" class="project-box moving-text">
+                <h3>Full Stack Website on Shoes</h3>
+                <p>Website for all brands of shoes built using Spring Boot and React JS.</p>
+            </a>
 
-    <a href="https://github.com/dfayazbasha/Food-Delivery-Ride-Booking-Backend-" target="_blank" class="project-box moving-text">
-        <h3>Food Delivery Backend</h3>
-        <p>Backend application for ordering and delivery, implemented with Java and Spring Boot.</p>
-    </a>
+            <a href="https://github.com/dfayazbasha/Food-Delivery-Ride-Booking-Backend-" target="_blank" class="project-box moving-text">
+                <h3>Food Delivery Backend</h3>
+                <p>Backend application for ordering and delivery, implemented with Java and Spring Boot.</p>
+            </a>
 
-    <a href="https://github.com/dfayazbasha/asset-management-java" target="_blank" class="project-box moving-text">
-        <h3>Asset Management using Java</h3>
-        <p>Managing assets and performing CRUD operations using Java.</p>
-    </a>
+            <a href="https://github.com/dfayazbasha/asset-management-java" target="_blank" class="project-box moving-text">
+                <h3>Asset Management using Java</h3>
+                <p>Managing assets and performing CRUD operations using Java.</p>
+            </a>
 
-</section>
-
+        </section>
         
         <section id="resume" class="resume">
             <h2 class="moving-text">Resume</h2>
-            <a href="https://drive.google.com/file/d/1irm9swYJWVT-KBlnegoQexWV6TMBYUHi/view?usp=drive_link" target="_blank" class="moving-text"><i class="fas fa-file-alt"></i> View Resume</a>
+            <a href="https://drive.google.com/file/d/1irm9swYJWVT-KBlnegoQexWV6TMBYUHi/view?usp=drive_link" target="_blank" class="moving-text">
+                <i class="fas fa-file-alt"></i> View Resume
+            </a>
         </section>
         
-            <h2 class="moving-text">Certifications</h2>
+        <h2 class="moving-text">Certifications</h2>
         <section class="skills-container">
             <div class="skill-box moving-text">Data Analytics and Visualization - Accenture</div>
             <div class="skill-box moving-text">SQL - IBM</div>
@@ -218,14 +224,11 @@ a.project-box:hover {
             <h2 class="moving-text">Contact</h2>
             <p class="moving-text">Let's connect! I am a quick learner, passionate about coding and always eager to explore new challenges.</p>
             <p class="moving-text">Phone: 6302973440</p>
-         <p class="moving-text">Email: fayazdfb@gmail.com</p>
+            <p class="moving-text">Email: fayazdfb@gmail.com</p>
 
             <a href="https://github.com/dfayazbasha" target="_blank" class="moving-text"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/fayaz-basha-d-47532b26a" target="_blank" class="moving-text"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:fayazdfb@gmail.com" target="_blank" class="moving-text">
-    <i class="fas fa-envelope"></i>
-</a>
-
+            <a href="mailto:fayazdfb@gmail.com" target="_blank" class="moving-text"><i class="fas fa-envelope"></i></a>
         </section>
     </div>
 </body>
